@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a9d744e6614c4cc45b5ad452f32ffc98
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191250
+  packageName: HDRP Terrain Tessellation 2
+  packageVersion: 2.0
+  assetPath: Assets/TerrainTessellation_HDRP/Textures/Sky/Sky.mat
+  uploadId: 654097

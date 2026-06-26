@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: c2df985554f73df42916fc4af289911c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 18700000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191250
+  packageName: HDRP Terrain Tessellation 2
+  packageVersion: 2.0
+  assetPath: Assets/TerrainTessellation_HDRP/Materials/Terrain_Material_Test_Data.asset
+  uploadId: 654097

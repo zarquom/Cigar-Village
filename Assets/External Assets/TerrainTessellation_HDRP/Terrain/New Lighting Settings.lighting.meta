@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3da390aaf88e83341bbc1a25868d19ed
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191250
+  packageName: HDRP Terrain Tessellation 2
+  packageVersion: 2.0
+  assetPath: Assets/TerrainTessellation_HDRP/Terrain/New Lighting Settings.lighting
+  uploadId: 654097

@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: ef40284ec4b685245be2f6665f3af909
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 191250
+  packageName: HDRP Terrain Tessellation 2
+  packageVersion: 2.0
+  assetPath: Assets/TerrainTessellation_HDRP/Shaders/Terrain/Terrain_Layer_8.shader
+  uploadId: 654097
