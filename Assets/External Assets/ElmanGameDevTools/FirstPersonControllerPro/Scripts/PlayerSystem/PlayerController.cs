@@ -199,6 +199,7 @@ namespace ElmanGameDevTools.PlayerSystem
         private void HandleCrouchLogic()
         {
             _isCrouching = inputSystem.Player.Crouch.IsPressed() || !CanStandUp();
+            Debug.Log(_isCrouching ? "Crouching" : "Standing");
             _targetHeight = _isCrouching ? crouchHeight : _originalHeight;
         }
 

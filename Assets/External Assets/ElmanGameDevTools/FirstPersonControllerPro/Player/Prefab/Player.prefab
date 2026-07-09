@@ -301,7 +301,7 @@ MonoBehaviour:
   maxTotalTilt: 5
   crouchHeight: 1.3
   crouchSmoothTime: 0.2
-  enableRunFov: 1
+  enableRunFov: 0
   normalFov: 60
   runFov: 70
   fovChangeSpeed: 8
