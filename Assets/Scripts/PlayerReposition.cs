@@ -6,7 +6,6 @@ public class PlayerReposition : MonoBehaviour
     [SerializeField] private float boundValue;
     void Update()
     {
-        Debug.Log(playerCharController.transform.localPosition.z);
         if (playerCharController.transform.localPosition.z < -boundValue)
         {
             playerCharController.enabled = false;

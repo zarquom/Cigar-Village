@@ -74,6 +74,9 @@ namespace ElmanGameDevTools.PlayerSystem
         public LayerMask groundLayer = 1;
         public float groundCheckDistance = 0.5f;
 
+        [Header("MANAGERS")]
+        public LevelManager levelManager;
+
         private Vector3 _velocity;
         private float _currentTilt;
         private float _timer;
@@ -298,6 +301,12 @@ namespace ElmanGameDevTools.PlayerSystem
                 if (col.bounds.min.y < standingHeightMarker.transform.position.y + minStandingClearance) return false;
             }
             return true;
+        }
+
+        void OnTriggerEnter(Collider col)
+        {
+            if (col == null) return;
+            levelManager?.OnPlayerColliderHit(col);
         }
 
         private void OnDrawGizmosSelected()
