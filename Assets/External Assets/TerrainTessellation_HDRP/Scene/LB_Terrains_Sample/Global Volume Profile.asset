@@ -42,28 +42,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   rotation:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 210
   skyIntensityMode:
     m_OverrideState: 0
     m_Value: 0
   exposure:
     m_OverrideState: 1
-    m_Value: 13
+    m_Value: 16
   multiplier:
     m_OverrideState: 0
     m_Value: 1
   upperHemisphereLuxValue:
     m_OverrideState: 1
-    m_Value: 1.2108874
+    m_Value: 1.2108877
   upperHemisphereLuxColor:
     m_OverrideState: 1
-    m_Value: {x: 0.2954723, y: 0.3787679, z: 0.5}
+    m_Value: {x: 0.29547235, y: 0.3787678, z: 0.5}
   desiredLuxValue:
     m_OverrideState: 0
     m_Value: 20000
   updateMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 0
   updatePeriod:
     m_OverrideState: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
     m_Value: 1
   fixedExposure:
     m_OverrideState: 1
-    m_Value: 12
+    m_Value: 12.882352
   compensation:
     m_OverrideState: 0
     m_Value: 0
@@ -438,7 +438,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.341
+    m_Value: 0.155
   smoothness:
     m_OverrideState: 1
     m_Value: 0.484
@@ -469,10 +469,10 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -1.22
   contrast:
     m_OverrideState: 1
-    m_Value: 17
+    m_Value: 5.1
   colorFilter:
     m_OverrideState: 0
     m_Value: {r: 1, g: 1, b: 1, a: 1}
@@ -592,7 +592,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 1, z: 1, w: 0}
   gamma:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 1, z: 1, w: -0.095693775}
+    m_Value: {x: 1, y: 1, z: 1, w: -0.105402514}
   gain:
     m_OverrideState: 0
     m_Value: {x: 1, y: 1, z: 1, w: 0}
