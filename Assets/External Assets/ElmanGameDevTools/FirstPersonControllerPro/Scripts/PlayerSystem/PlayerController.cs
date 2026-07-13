@@ -76,6 +76,7 @@ namespace ElmanGameDevTools.PlayerSystem
 
         [Header("MANAGERS")]
         public LevelManager levelManager;
+        public PlayerInventory playerInventory;
 
         private Vector3 _velocity;
         private float _currentTilt;
@@ -307,6 +308,7 @@ namespace ElmanGameDevTools.PlayerSystem
         {
             if (col == null) return;
             levelManager?.OnPlayerColliderHit(col);
+            playerInventory?.OnPlayerColliderHit(col);
         }
 
         private void OnDrawGizmosSelected()
