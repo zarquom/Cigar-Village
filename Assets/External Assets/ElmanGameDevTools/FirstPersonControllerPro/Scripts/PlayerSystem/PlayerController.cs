@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -74,6 +75,9 @@ namespace ElmanGameDevTools.PlayerSystem
         public LayerMask groundLayer = 1;
         public float groundCheckDistance = 0.5f;
 
+        [Header("UI")]
+        public TextMeshProUGUI interactText;
+
         [Header("MANAGERS")]
         public LevelManager levelManager;
         public PlayerInventory playerInventory;
@@ -92,6 +96,7 @@ namespace ElmanGameDevTools.PlayerSystem
         private bool _hasJumped;
         private MovementState _currentMovementState = MovementState.Walking;
         private InputSystem_Actions inputSystem;
+        private InteractableObject currentInteractableObject;
 
         public InputSystem_Actions InputSystem => inputSystem;
 
@@ -122,11 +127,14 @@ namespace ElmanGameDevTools.PlayerSystem
 
             if (standingHeightMarker != null)
                 _markerHeightOffset = standingHeightMarker.transform.position.y - transform.position.y;
+
+            interactText.text = "";
         }
 
         private void Update()
         {
             CheckGroundStatus();
+            HandleInteraction();
             HandleCrouchLogic();
             UpdateMovementState();
             HandleMovement();
@@ -304,11 +312,39 @@ namespace ElmanGameDevTools.PlayerSystem
             return true;
         }
 
+        private void HandleInteraction()
+        {
+            if (inputSystem.Player.Interact.WasPressedThisFrame() && _isGrounded && !_isCrouching && currentInteractableObject != null && currentInteractableObject.CanInteract)
+            {
+                currentInteractableObject.Interact();
+                interactText.text = "";
+            }
+        }
+
         void OnTriggerEnter(Collider col)
         {
             if (col == null) return;
             levelManager?.OnPlayerColliderHit(col);
             playerInventory?.OnPlayerColliderHit(col);
+        }
+
+        void OnTriggerStay(Collider col)
+        {
+            if (col == null) return;
+            if(col.tag == "interactable")
+            {
+                currentInteractableObject = col.gameObject.GetComponent<InteractableObject>();
+                if (currentInteractableObject != null && currentInteractableObject.CanInteract)
+                {
+                    interactText.text = currentInteractableObject.InteractionPromptTerm.GetLocalizedString();
+                }
+            }
+        }
+
+        void OnTriggerExit(Collider col)
+        {
+            interactText.text = "";
+            currentInteractableObject = null;
         }
 
         private void OnDrawGizmosSelected()

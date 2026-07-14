@@ -9,6 +9,7 @@ TagManager:
   - entrance
   - exit
   - cigar
+  - interactable
   layers:
   - Default
   - TransparentFX
