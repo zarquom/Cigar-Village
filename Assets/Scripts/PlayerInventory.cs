@@ -1,9 +1,11 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI cigarText;
+    [SerializeField] private Image lifeImage;
     private float cigarCount = 0f;
 
     public void OnPlayerColliderHit(Collider col)
@@ -15,5 +17,10 @@ public class PlayerInventory : MonoBehaviour
             cigarText.text = $"Cigars: {cigarCount:F0}";
             Destroy(col.gameObject);
         }
+    }
+
+    public void OnAddLife(float lifeToAdd)
+    {
+        lifeImage.rectTransform.offsetMax = new Vector2(lifeImage.rectTransform.offsetMax.x + lifeToAdd, lifeImage.rectTransform.offsetMax.y);
     }
 }

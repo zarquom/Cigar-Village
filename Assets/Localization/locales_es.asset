@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: Pulse 'E' para interactuar con el pozo
     m_Metadata:
       m_Items: []
+  - m_Id: 419285875998720
+    m_Localized: Vida
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
