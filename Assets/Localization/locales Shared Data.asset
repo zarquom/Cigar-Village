@@ -23,6 +23,10 @@ MonoBehaviour:
     m_Key: vida
     m_Metadata:
       m_Items: []
+  - m_Id: 1030144327335936
+    m_Key: interactDoor
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

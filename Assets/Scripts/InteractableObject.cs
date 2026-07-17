@@ -9,7 +9,8 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private LocalizedString interactionPromptTerm;
     [SerializeField] private InteractionType interactionType;
     [SerializeField] private GameObject interactionPrefab;
-    [SerializeField] private Transform interactionPrefabTransform;
+    [SerializeField] private Vector3 interactionPrefabPosition;
+    [SerializeField] private Quaternion interactionPrefabRotation;
     public bool CanInteract => canInteract;
     public LocalizedString InteractionPromptTerm => interactionPromptTerm;
     public InteractionType InteractionType => interactionType;
@@ -29,13 +30,16 @@ public class InteractableObject : MonoBehaviour
         switch( interactionType ) {
             case InteractionType.Pickup:
                 GameObject obj = Instantiate( interactionPrefab, transform );
-                obj.transform.localPosition = new Vector3(-1.44f, -0.8f, 0.65f);
+                obj.transform.SetLocalPositionAndRotation(interactionPrefabPosition, interactionPrefabRotation);
                 break;
             case InteractionType.Talk:
                 // Handle talk interaction
                 break;
             case InteractionType.Examine:
                 // Handle examine interaction
+                break;
+            case InteractionType.Open:
+                transform.localRotation = interactionPrefabRotation;
                 break;
         }
     }
@@ -46,5 +50,6 @@ public enum InteractionType
     None,
     Pickup,
     Talk,
-    Examine
+    Examine,
+    Open
 }

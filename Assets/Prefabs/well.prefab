@@ -113,7 +113,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.9925799, y: 1.4195784, z: 3.8178043}
+  m_Size: {x: 1.84, y: 1.99, z: 3.8178043}
   m_Center: {x: 0, y: 0, z: 0.17674994}
 --- !u!114 &8045815316629744891
 MonoBehaviour:
@@ -138,6 +138,8 @@ MonoBehaviour:
     m_LocalVariables: []
   interactionType: 1
   interactionPrefab: {fileID: 1694660357873193160, guid: efe7e0d8eca20404d902840daa1201d6, type: 3}
+  interactionPrefabPosition: {x: -1.94, y: 1.21, z: 0.23}
+  interactionPrefabRotation: {x: 0, y: 0, z: 0, w: 0}
   references:
     version: 2
     RefIds: []

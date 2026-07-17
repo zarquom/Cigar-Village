@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Vida
     m_Metadata:
       m_Items: []
+  - m_Id: 1030144327335936
+    m_Localized: Pulse 'E' para abrir la puerta
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
