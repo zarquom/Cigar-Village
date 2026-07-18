@@ -3325,7 +3325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 75807733905775532, guid: efe7e0d8eca20404d902840daa1201d6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.02
+      value: 0.48
       objectReference: {fileID: 0}
     - target: {fileID: 75807733905775532, guid: efe7e0d8eca20404d902840daa1201d6, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3362,6 +3362,10 @@ PrefabInstance:
     - target: {fileID: 1694660357873193160, guid: efe7e0d8eca20404d902840daa1201d6, type: 3}
       propertyPath: m_Name
       value: CigarObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 6759353750822480458, guid: efe7e0d8eca20404d902840daa1201d6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
