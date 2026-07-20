@@ -11,14 +11,21 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private GameObject interactionPrefab;
     [SerializeField] private Vector3 interactionPrefabPosition;
     [SerializeField] private Quaternion interactionPrefabRotation;
+    [SerializeField] private bool needsKey = false;
     public bool CanInteract => canInteract;
     public LocalizedString InteractionPromptTerm => interactionPromptTerm;
     public InteractionType InteractionType => interactionType;
     public GameObject InteractionPrefab => interactionPrefab;
-    public void Interact()
+    public void Interact(PlayerInventory playerInventory)
     {
         if (canInteract)
         {
+            if (needsKey && !playerInventory.HasTheKey)
+            {
+                Debug.Log($"Cannot interact with {gameObject.name} without the key.");
+                return;
+            }
+
             PerformInteraction();
             Debug.Log($"Interacted with {gameObject.name}");
             canInteract = false; // Prevent further interactions
@@ -39,6 +46,7 @@ public class InteractableObject : MonoBehaviour
                 // Handle examine interaction
                 break;
             case InteractionType.Open:
+                transform.localPosition = interactionPrefabPosition;
                 transform.localRotation = interactionPrefabRotation;
                 break;
         }

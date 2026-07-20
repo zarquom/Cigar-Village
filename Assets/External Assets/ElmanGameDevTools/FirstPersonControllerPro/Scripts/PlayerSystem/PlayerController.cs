@@ -316,7 +316,7 @@ namespace ElmanGameDevTools.PlayerSystem
         {
             if (inputSystem.Player.Interact.WasPressedThisFrame() && _isGrounded && !_isCrouching && currentInteractableObject != null && currentInteractableObject.CanInteract)
             {
-                currentInteractableObject.Interact();
+                currentInteractableObject.Interact(playerInventory);
                 interactText.text = "";
             }
         }

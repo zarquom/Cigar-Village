@@ -30,6 +30,10 @@ MonoBehaviour:
     m_Localized: Pulse 'E' para abrir la puerta
     m_Metadata:
       m_Items: []
+  - m_Id: 2217937959305216
+    m_Localized: Pulse 'E' para abrir la puerta de salida
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
