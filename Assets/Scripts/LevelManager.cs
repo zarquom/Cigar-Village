@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
         {
             case LevelStepType.Start:
                 step.activateAfterCompletionObj.SetActive(true);
+                currentStepIndex++;
                 break;
             case LevelStepType.End:
                 Debug.Log("Level Completed!");
