@@ -31,6 +31,10 @@ MonoBehaviour:
     m_Key: interactDoorExit
     m_Metadata:
       m_Items: []
+  - m_Id: 2952738160951296
+    m_Key: interactPuta
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

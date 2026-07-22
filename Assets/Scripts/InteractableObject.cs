@@ -1,7 +1,9 @@
 using System;
 using UnityEditor;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.Localization;
+using Yarn.Unity;
 
 public class InteractableObject : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] private LocalizedString interactionPromptTerm;
     [SerializeField] private InteractionType interactionType;
     [SerializeField] private GameObject interactionPrefab;
+    [SerializeField] DialogueRunner dialogueRunner;
     [SerializeField] private Vector3 interactionPrefabPosition;
     [SerializeField] private Quaternion interactionPrefabRotation;
     [SerializeField] private bool needsKey = false;
@@ -16,6 +19,14 @@ public class InteractableObject : MonoBehaviour
     public LocalizedString InteractionPromptTerm => interactionPromptTerm;
     public InteractionType InteractionType => interactionType;
     public GameObject InteractionPrefab => interactionPrefab;
+
+    private void Start()
+    {
+        if (interactionType == InteractionType.Talk && dialogueRunner == null)
+        {
+            dialogueRunner = FindAnyObjectByType<DialogueRunner>();
+        }
+    }
     public void Interact(PlayerInventory playerInventory)
     {
         if (canInteract)
@@ -40,7 +51,7 @@ public class InteractableObject : MonoBehaviour
                 obj.transform.SetLocalPositionAndRotation(interactionPrefabPosition, interactionPrefabRotation);
                 break;
             case InteractionType.Talk:
-                // Handle talk interaction
+                dialogueRunner.StartDialogue("Start");
                 break;
             case InteractionType.Examine:
                 // Handle examine interaction
