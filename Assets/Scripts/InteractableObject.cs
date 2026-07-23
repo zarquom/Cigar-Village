@@ -1,3 +1,4 @@
+using ElmanGameDevTools.PlayerSystem;
 using System;
 using UnityEditor;
 using UnityEditor.Experimental.GraphView;
@@ -20,14 +21,19 @@ public class InteractableObject : MonoBehaviour
     public InteractionType InteractionType => interactionType;
     public GameObject InteractionPrefab => interactionPrefab;
 
+    private PlayerInventory playerInventory;
+    private PlayerController playerController;
+
     private void Start()
     {
+        playerInventory = FindAnyObjectByType<PlayerInventory>();
+        playerController = FindAnyObjectByType<PlayerController>();
         if (interactionType == InteractionType.Talk && dialogueRunner == null)
         {
             dialogueRunner = FindAnyObjectByType<DialogueRunner>();
         }
     }
-    public void Interact(PlayerInventory playerInventory)
+    public void Interact()
     {
         if (canInteract)
         {
@@ -52,6 +58,12 @@ public class InteractableObject : MonoBehaviour
                 break;
             case InteractionType.Talk:
                 dialogueRunner.StartDialogue("Start");
+                dialogueRunner.onDialogueComplete.AddListener(() =>
+                {
+                    playerController.SetCanMove(true);
+                    canInteract = true; // Allow interaction again after dialogue is complete
+                });
+                playerController.SetCanMove(false);
                 break;
             case InteractionType.Examine:
                 // Handle examine interaction

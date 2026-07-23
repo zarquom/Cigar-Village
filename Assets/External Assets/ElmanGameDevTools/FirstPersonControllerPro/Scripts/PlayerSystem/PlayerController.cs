@@ -94,6 +94,7 @@ namespace ElmanGameDevTools.PlayerSystem
         private bool _isGrounded;
         private bool _isCrouching;
         private bool _hasJumped;
+        private bool _canMove;
         private MovementState _currentMovementState = MovementState.Walking;
         private InputSystem_Actions inputSystem;
         private InteractableObject currentInteractableObject;
@@ -110,6 +111,7 @@ namespace ElmanGameDevTools.PlayerSystem
         {
             inputSystem = new InputSystem_Actions();
             inputSystem.Enable();
+            _canMove = true;
         }
 
         private void Start()
@@ -131,18 +133,26 @@ namespace ElmanGameDevTools.PlayerSystem
             interactText.text = "";
         }
 
+        public void SetCanMove(bool canMove)
+        {
+            _canMove = canMove;
+        }
+
         private void Update()
         {
             CheckGroundStatus();
-            HandleInteraction();
-            HandleCrouchLogic();
-            UpdateMovementState();
-            HandleMovement();
-            HandleHeightAndCamera();
-            HandleCameraControl();
-            HandleCameraTilt();
-            HandleFovChange();
-
+            if (_canMove)
+            {
+                HandleInteraction();
+                HandleCrouchLogic();
+                UpdateMovementState();
+                HandleMovement();
+                HandleHeightAndCamera();
+                HandleCameraControl();
+                HandleCameraTilt();
+                HandleFovChange();
+            }
+ 
             if (enableHeadBob) HandleHeadBob();
         }
 
@@ -300,7 +310,7 @@ namespace ElmanGameDevTools.PlayerSystem
         /// Checks for obstacles above the player when trying to stand up.
         /// </summary>
         /// <returns>True if there is enough space to stand.</returns>
-        public bool CanStandUp()
+        private bool CanStandUp()
         {
             if (standingHeightMarker == null) return true;
             Collider[] hits = Physics.OverlapSphere(standingHeightMarker.transform.position, standingCheckRadius, obstacleLayerMask);
@@ -316,7 +326,7 @@ namespace ElmanGameDevTools.PlayerSystem
         {
             if (inputSystem.Player.Interact.WasPressedThisFrame() && _isGrounded && !_isCrouching && currentInteractableObject != null && currentInteractableObject.CanInteract)
             {
-                currentInteractableObject.Interact(playerInventory);
+                currentInteractableObject.Interact();
                 interactText.text = "";
             }
         }
