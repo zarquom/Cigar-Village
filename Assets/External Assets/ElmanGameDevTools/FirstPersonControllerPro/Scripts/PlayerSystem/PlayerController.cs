@@ -136,6 +136,7 @@ namespace ElmanGameDevTools.PlayerSystem
         public void SetCanMove(bool canMove)
         {
             _canMove = canMove;
+            Cursor.lockState = canMove ? CursorLockMode.Locked : CursorLockMode.None;
         }
 
         private void Update()

@@ -1,0 +1,36 @@
+title: Start
+---
+<<declare $met_puta = false>>
+<<declare $asked_about_shop = false>>
+
+<<if $met_puta>>
+La veneno: ¿De qué me conoces a mí, peazo puta?
+<<else>>
+La veneno: Me cago en tó tus muertos so desgraciá. ¿Tú quién eres?
+<<set $met_puta = true>>
+<<endif>>
+-> ¿Qué es este sitio?
+    <<jump AboutShop>>
+-> Te doy pitis por un tetazo
+    <<jump Shop>>
+-> Nada nada, que te den.
+    La veneno: Como te pegue un tetazo te escalabro
+    <<stop>>
+===
+
+title: AboutShop
+---
+<<if $asked_about_shop>>
+La veneno: Esto es el pueblo de los cigarros, y yo soy la puta más famosa de aquí. Si quieres algo, paga con pitis
+<<else>>
+<<set $asked_about_shop = true>>
+La veneno: La Veneno vale más por lo que calla que por lo que habla
+<<endif>>
+<<jump Start>>
+===
+
+title: Shop
+---
+La veneno: Yo salgo a la calle, doy un taconazo y me llueven los millones
+<<open_shop>>
+===

@@ -23,11 +23,13 @@ public class InteractableObject : MonoBehaviour
 
     private PlayerInventory playerInventory;
     private PlayerController playerController;
+    private ShopManager shopManager;
 
     private void Start()
     {
         playerInventory = FindAnyObjectByType<PlayerInventory>();
         playerController = FindAnyObjectByType<PlayerController>();
+        shopManager = FindAnyObjectByType<ShopManager>();
         if (interactionType == InteractionType.Talk && dialogueRunner == null)
         {
             dialogueRunner = FindAnyObjectByType<DialogueRunner>();
@@ -49,6 +51,7 @@ public class InteractableObject : MonoBehaviour
         }
     }
 
+    bool shopOpened = false;
     private void PerformInteraction()
     {
         switch( interactionType ) {
@@ -60,8 +63,21 @@ public class InteractableObject : MonoBehaviour
                 dialogueRunner.StartDialogue("Start");
                 dialogueRunner.onDialogueComplete.AddListener(() =>
                 {
-                    playerController.SetCanMove(true);
-                    canInteract = true; // Allow interaction again after dialogue is complete
+                    if (!shopOpened)
+                    {
+                        playerController.SetCanMove(true);
+                        canInteract = true; // Allow interaction again after dialogue is complete
+                    }
+                });
+                dialogueRunner.AddCommandHandler("open_shop", () =>
+                {
+                    shopOpened = true;
+                    shopManager.OpenShop(() =>
+                    {
+                        shopOpened = false;
+                        playerController.SetCanMove(true);
+                        canInteract = true; // Allow interaction again after shop is closed
+                    });
                 });
                 playerController.SetCanMove(false);
                 break;
