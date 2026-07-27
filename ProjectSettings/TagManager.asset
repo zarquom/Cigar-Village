@@ -11,6 +11,7 @@ TagManager:
   - cigar
   - interactable
   - key
+  - life
   layers:
   - Default
   - TransparentFX

@@ -24,6 +24,12 @@ public class PlayerInventory : MonoBehaviour
             hasTheKey = true;
             Destroy(col.gameObject);
         }
+        else if (col.tag == "life")
+        {
+            LifeObject lifeObject = col.gameObject.GetComponent<LifeObject>();
+            OnAddLife(lifeObject.LifeValue);
+            Destroy(col.gameObject);
+        }
     }
 
     public void OnAddLife(float lifeToAdd)
