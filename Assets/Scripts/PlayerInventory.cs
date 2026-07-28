@@ -6,11 +6,18 @@ public class PlayerInventory : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI cigarText;
     [SerializeField] private Image lifeImage;
+    private DayNightManager dayNightManager;
     private float cigarCount = 0f;
     private bool hasTheKey = false;
 
     public bool HasTheKey => hasTheKey;
 
+    private void Start()
+    {
+        dayNightManager = FindAnyObjectByType<DayNightManager>();
+        cigarText.text = $"Cigars: {cigarCount:F0}";
+
+    }
     public void OnPlayerColliderHit(Collider col)
     {
         if(col.tag == "cigar")
@@ -22,6 +29,7 @@ public class PlayerInventory : MonoBehaviour
         }else if (col.tag == "key")
         {
             hasTheKey = true;
+            dayNightManager.ChangeDayNight(false);
             Destroy(col.gameObject);
         }
         else if (col.tag == "life")
