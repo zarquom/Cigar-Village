@@ -291,6 +291,7 @@ MonoBehaviour:
     m_LocalVariables: []
   interactionType: 4
   interactionPrefab: {fileID: 0}
+  dialogueRunner: {fileID: 0}
   interactionPrefabPosition: {x: 0, y: 0, z: 100}
   interactionPrefabRotation: {x: 0, y: 0, z: 0, w: 0}
   needsKey: 1

@@ -13,11 +13,13 @@ public class DayNightManager : MonoBehaviour
     private bool isDay = true;
     private VolumeProfile profileVolume;
     private HDRISky sky;
+    private Exposure exposure;
     private InputSystem_Actions inputSystem;
     void Start()
     {
         profileVolume = levelVolume.sharedProfile;
         profileVolume.TryGet<HDRISky>(out sky);
+        profileVolume.TryGet<Exposure>(out exposure);
 
         inputSystem = new InputSystem_Actions();
         inputSystem.Enable();
@@ -36,6 +38,7 @@ public class DayNightManager : MonoBehaviour
     public void ChangeDayNight(bool toDay)
     {
         isDay = toDay;
+        exposure.fixedExposure.value = isDay ? 8f : 5f;
         sky.hdriSky.Override(isDay ? dayTexture : nightTexture);
     }
 }
