@@ -3127,8 +3127,8 @@ MonoBehaviour:
   interactionType: 4
   interactionPrefab: {fileID: 0}
   dialogueRunner: {fileID: 0}
-  interactionPrefabPosition: {x: 0, y: 0, z: 0}
-  interactionPrefabRotation: {x: 0, y: 0.53729963, z: 0, w: 0.8433914}
+  interactionPrefabPosition: {x: 2.123, y: 0, z: 0}
+  interactionPrefabRotation: {x: 0, y: -0.70710677, z: 0, w: 0.70710677}
   needsKey: 0
   references:
     version: 2
