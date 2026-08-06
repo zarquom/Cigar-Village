@@ -5899,7 +5899,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1791345288085889966, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
       propertyPath: m_Interpolate
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3338086012619352433, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
       propertyPath: m_Name
@@ -5910,8 +5910,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2052660371}
     - target: {fileID: 4469175863701733834, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
+      propertyPath: areaCenter.x
+      value: 516.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469175863701733834, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
+      propertyPath: areaCenter.y
+      value: -62.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469175863701733834, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
+      propertyPath: areaCenter.z
+      value: 416.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469175863701733834, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
       propertyPath: fleeDistance
-      value: 5.39
+      value: 10.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469175863701733834, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
+      propertyPath: wanderRadius
+      value: 130.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4469175863701733834, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
+      propertyPath: wanderInterval
+      value: 1.69
       objectReference: {fileID: 0}
     - target: {fileID: 7685765909770843471, guid: ce3ee5cc9b9dfeb41a482bd590d44db4, type: 3}
       propertyPath: m_LocalPosition.x
