@@ -23,12 +23,14 @@ public class InteractableObject : MonoBehaviour
 
     private PlayerInventory playerInventory;
     private PlayerController playerController;
+    private CharacterController playerCharController;
     private ShopManager shopManager;
 
     private void Start()
     {
         playerInventory = FindAnyObjectByType<PlayerInventory>();
         playerController = FindAnyObjectByType<PlayerController>();
+        playerCharController = FindAnyObjectByType<CharacterController>();
         shopManager = FindAnyObjectByType<ShopManager>();
         if (interactionType == InteractionType.Talk && dialogueRunner == null)
         {
@@ -45,10 +47,9 @@ public class InteractableObject : MonoBehaviour
                 return;
             }
 
-            PerformInteraction();
-            Debug.Log($"Interacted with {gameObject.name}");
             canInteract = false; // Prevent further interactions
-        }
+            PerformInteraction();
+            Debug.Log($"Interacted with {gameObject.name}");        }
     }
 
     bool shopOpened = false;
@@ -88,6 +89,12 @@ public class InteractableObject : MonoBehaviour
                 transform.localPosition = interactionPrefabPosition;
                 transform.localRotation = interactionPrefabRotation;
                 break;
+            case InteractionType.Teleport:
+                playerCharController.enabled = false;
+                playerCharController.transform.position = new Vector3(interactionPrefab.transform.position.x, interactionPrefab.transform.position.y, interactionPrefab.transform.position.z);
+                playerCharController.enabled = true;
+                canInteract = true; // Allow interaction again after teleporting
+                break;
         }
     }
 }
@@ -98,5 +105,6 @@ public enum InteractionType
     Pickup,
     Talk,
     Examine,
-    Open
+    Open,
+    Teleport
 }

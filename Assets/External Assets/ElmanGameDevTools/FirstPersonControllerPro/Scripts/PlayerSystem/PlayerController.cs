@@ -2,6 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Localization;
 
 namespace ElmanGameDevTools.PlayerSystem
 {
@@ -337,6 +338,14 @@ namespace ElmanGameDevTools.PlayerSystem
             if (col == null) return;
             levelManager?.OnPlayerColliderHit(col);
             playerInventory?.OnPlayerColliderHit(col);
+            if (col.tag == "interactable")
+            {
+                currentInteractableObject = col.gameObject.GetComponent<InteractableObject>();
+                if (currentInteractableObject != null && currentInteractableObject.CanInteract && currentInteractableObject.InteractionType == InteractionType.Teleport)
+                {
+                    currentInteractableObject.Interact();
+                }
+            }
         }
 
         void OnTriggerStay(Collider col)
@@ -345,7 +354,7 @@ namespace ElmanGameDevTools.PlayerSystem
             if(col.tag == "interactable")
             {
                 currentInteractableObject = col.gameObject.GetComponent<InteractableObject>();
-                if (currentInteractableObject != null && currentInteractableObject.CanInteract)
+                if (currentInteractableObject != null && currentInteractableObject.CanInteract && !currentInteractableObject.InteractionPromptTerm.IsEmpty)
                 {
                     interactText.text = currentInteractableObject.InteractionPromptTerm.GetLocalizedString();
                 }
