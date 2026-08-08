@@ -1,3 +1,4 @@
+using System;
 using Unity.Android.Gradle.Manifest;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -15,6 +16,8 @@ public class DayNightManager : MonoBehaviour
     private HDRISky sky;
     private Exposure exposure;
     private InputSystem_Actions inputSystem;
+    public Action<bool> OnChangeDayNight;
+
     void Start()
     {
         profileVolume = levelVolume.sharedProfile;
@@ -40,5 +43,6 @@ public class DayNightManager : MonoBehaviour
         isDay = toDay;
         exposure.fixedExposure.value = isDay ? 8f : 5f;
         sky.hdriSky.Override(isDay ? dayTexture : nightTexture);
+        OnChangeDayNight?.Invoke(isDay);
     }
 }

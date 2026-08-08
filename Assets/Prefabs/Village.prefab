@@ -321,7 +321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690266449187388944, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.92
+      value: -6.43
       objectReference: {fileID: 0}
     - target: {fileID: 3690266449187388944, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
       propertyPath: m_LocalPosition.y
@@ -329,7 +329,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3690266449187388944, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.4
+      value: -10.05
       objectReference: {fileID: 0}
     - target: {fileID: 3690266449187388944, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
       propertyPath: m_LocalRotation.w
@@ -362,13 +362,34 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2638147382055964623, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3663499903910818542}
   m_SourcePrefab: {fileID: 100100000, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
 --- !u!4 &3241961746912147971 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3690266449187388944, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
   m_PrefabInstance: {fileID: 2291125773920191507}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4275925754565610460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2638147382055964623, guid: 5d4d8fc12fd4dc04eaea091c2fad0204, type: 3}
+  m_PrefabInstance: {fileID: 2291125773920191507}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3663499903910818542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4275925754565610460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae7ac2aec3692884a9c21a1963767f37, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DayNightObject
+  NightPosition: {x: 17.92, y: 0.9, z: -0.94}
 --- !u!1001 &3450183907509646552
 PrefabInstance:
   m_ObjectHideFlags: 0
