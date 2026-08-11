@@ -6164,6 +6164,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5028722932344280676, guid: 64423fe3fa3d38c4fae2b5ed696d791f, type: 3}
+      propertyPath: m_LightDimmer
+      value: 10.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515008643714023376, guid: 64423fe3fa3d38c4fae2b5ed696d791f, type: 3}
+      propertyPath: m_ShapeRadius
+      value: 0.77
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
