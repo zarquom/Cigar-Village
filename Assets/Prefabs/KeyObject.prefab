@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81f9c893dd2c30e418e799d41cd44802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyObject
-  keyObject: {fileID: 0}
+  keyObject: {fileID: 8870168985546080758}
 --- !u!1001 &7231798746742997201
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -136,5 +136,10 @@ PrefabInstance:
 --- !u!4 &8093807589350513484 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1445226371698809757, guid: e360d8d16d87ca544b56a603ea831f2f, type: 3}
+  m_PrefabInstance: {fileID: 7231798746742997201}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8870168985546080758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2253393103804301607, guid: e360d8d16d87ca544b56a603ea831f2f, type: 3}
   m_PrefabInstance: {fileID: 7231798746742997201}
   m_PrefabAsset: {fileID: 0}
